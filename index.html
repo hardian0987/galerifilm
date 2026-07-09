@@ -3,229 +3,335 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Galeri Film - Poster & Makna</title>
+  <title>GaleriFilm - Poster & Makna</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>
-    <h1>Galeri Film</h1>
-    <p>Kumpulan poster film dengan rating & makna</p>
-  </header>
+  <nav>
+    <div class="nav-inner">
+      <div class="logo">GaleriFilm</div>
+      <ul class="nav-links">
+        <li><a href="#koleksi">Koleksi</a></li>
+        <li><a href="#stats">Tentang</a></li>
+      </ul>
+    </div>
+  </nav>
 
-  <section id="film-grid">
+  <section id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-label">GaleriFilm</p>
+      <h1 class="hero-title">Setiap film punya<br>makna yang tersimpan</h1>
+      <p class="hero-desc">Bukan sekadar poster — ini adalah catatan makna dari setiap film yang meninggalkan jejak di hati. Koleksi pribadi yang dikurasi satu per satu.</p>
+      <a href="#koleksi" class="btn-primary">Jelajahi Koleksi <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </section>
 
-    <article class="film-card" data-rating="9.3">
-      <div class="poster">
-        <img src="https://picsum.photos/seed/shawshank/400/600" alt="The Shawshank Redemption Poster" loading="lazy">
-        <div class="overlay">
-          <p>"Harapan adalah hal yang baik, mungkin yang terbaik dari semuanya. Dan hal baik tidak akan pernah mati."</p>
+  <section id="koleksi">
+    <div class="section-header">
+      <h2>Poster &amp; Pesan di Balik Layar</h2>
+      <p class="section-sub">Temukan makna dari film-film favoritmu</p>
+    </div>
+
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">Semua</button>
+      <button class="filter-btn" data-filter="sci-fi">Sci-Fi</button>
+      <button class="filter-btn" data-filter="drama">Drama</button>
+      <button class="filter-btn" data-filter="thriller">Thriller</button>
+      <button class="filter-btn" data-filter="animasi">Animasi</button>
+      <button class="filter-btn" data-filter="action">Action</button>
+      <button class="filter-btn" data-filter="romance">Romance</button>
+      <button class="filter-btn" data-filter="komedi">Komedi</button>
+    </div>
+
+    <div id="film-grid">
+
+      <article class="film-card" data-genre="drama" data-rating="9.3">
+        <div class="poster">
+          <img src="https://picsum.photos/seed/shawshank2/400/600" alt="The Shawshank Redemption" loading="lazy">
+          <span class="genre-badge">Drama</span>
         </div>
-      </div>
-      <div class="info">
-        <h2>The Shawshank Redemption</h2>
-        <span class="year">1994</span>
-        <div class="rating">
+        <div class="rating-stars">
           <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
           <span class="rating-num">9.3</span>
         </div>
-      </div>
-    </article>
-
-    <article class="film-card" data-rating="9.2">
-      <div class="poster">
-        <img src="https://picsum.photos/seed/godfather/400/600" alt="The Godfather Poster" loading="lazy">
-        <div class="overlay">
-          <p>"Keluarga lebih penting dari uang atau kekuasaan. Tanpa keluarga, kau tidak memiliki apa-apa."</p>
+        <div class="film-info">
+          <h3>The Shawshank Redemption</h3>
+          <span class="year">1994</span>
         </div>
-      </div>
-      <div class="info">
-        <h2>The Godfather</h2>
-        <span class="year">1972</span>
-        <div class="rating">
+        <p class="makna">"Harapan adalah hal yang baik, mungkin yang terbaik dari semuanya. Dan hal baik tidak akan pernah mati."</p>
+      </article>
+
+      <article class="film-card" data-genre="drama" data-rating="9.2">
+        <div class="poster">
+          <img src="https://picsum.photos/seed/godfather2/400/600" alt="The Godfather" loading="lazy">
+          <span class="genre-badge">Drama</span>
+        </div>
+        <div class="rating-stars">
           <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
           <span class="rating-num">9.2</span>
         </div>
-      </div>
-    </article>
-
-    <article class="film-card" data-rating="9.0">
-      <div class="poster">
-        <img src="https://picsum.photos/seed/darkknight/400/600" alt="The Dark Knight Poster" loading="lazy">
-        <div class="overlay">
-          <p>"Bukan tentang siapa yang terkuat, tapi tentang apa yang kau perjuangkan. Pahlawan sejati lahir dari pengorbanan."</p>
+        <div class="film-info">
+          <h3>The Godfather</h3>
+          <span class="year">1972</span>
         </div>
-      </div>
-      <div class="info">
-        <h2>The Dark Knight</h2>
-        <span class="year">2008</span>
-        <div class="rating">
+        <p class="makna">"Keluarga lebih penting dari uang atau kekuasaan. Tanpa keluarga, kau tidak memiliki apa-apa."</p>
+      </article>
+
+      <article class="film-card" data-genre="action,thriller" data-rating="9.0">
+        <div class="poster">
+          <img src="https://picsum.photos/seed/darkknight2/400/600" alt="The Dark Knight" loading="lazy">
+          <span class="genre-badge">Action</span>
+        </div>
+        <div class="rating-stars">
           <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
           <span class="rating-num">9.0</span>
         </div>
-      </div>
-    </article>
-
-    <article class="film-card" data-rating="8.8">
-      <div class="poster">
-        <img src="https://picsum.photos/seed/fightclub/400/600" alt="Fight Club Poster" loading="lazy">
-        <div class="overlay">
-          <p>"Kadang kau harus kehilangan segalanya untuk menyadari apa yang benar-benar berarti dalam hidupmu."</p>
+        <div class="film-info">
+          <h3>The Dark Knight</h3>
+          <span class="year">2008</span>
         </div>
-      </div>
-      <div class="info">
-        <h2>Fight Club</h2>
-        <span class="year">1999</span>
-        <div class="rating">
+        <p class="makna">"Bukan tentang siapa yang terkuat, tapi tentang apa yang kau perjuangkan. Pahlawan sejati lahir dari pengorbanan."</p>
+      </article>
+
+      <article class="film-card" data-genre="thriller,drama" data-rating="8.8">
+        <div class="poster">
+          <img src="https://picsum.photos/seed/fightclub2/400/600" alt="Fight Club" loading="lazy">
+          <span class="genre-badge">Thriller</span>
+        </div>
+        <div class="rating-stars">
           <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
           <span class="rating-num">8.8</span>
         </div>
-      </div>
-    </article>
-
-    <article class="film-card" data-rating="8.8">
-      <div class="poster">
-        <img src="https://picsum.photos/seed/forrestgump/400/600" alt="Forrest Gump Poster" loading="lazy">
-        <div class="overlay">
-          <p>"Hidup itu seperti sekotak coklat. Kau tidak pernah tahu apa yang akan kau dapatkan."</p>
+        <div class="film-info">
+          <h3>Fight Club</h3>
+          <span class="year">1999</span>
         </div>
-      </div>
-      <div class="info">
-        <h2>Forrest Gump</h2>
-        <span class="year">1995</span>
-        <div class="rating">
+        <p class="makna">"Kadang kau harus kehilangan segalanya untuk menyadari apa yang benar-benar berarti dalam hidupmu."</p>
+      </article>
+
+      <article class="film-card" data-genre="drama,komedi" data-rating="8.8">
+        <div class="poster">
+          <img src="https://picsum.photos/seed/forrestgump2/400/600" alt="Forrest Gump" loading="lazy">
+          <span class="genre-badge">Drama</span>
+        </div>
+        <div class="rating-stars">
           <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
           <span class="rating-num">8.8</span>
         </div>
-      </div>
-    </article>
-
-    <article class="film-card" data-rating="8.8">
-      <div class="poster">
-        <img src="https://picsum.photos/seed/inception/400/600" alt="Inception Poster" loading="lazy">
-        <div class="overlay">
-          <p>"Ide bagaikan virus. Sekecil apapun, ia bisa tumbuh dan mengubah segalanya dalam sekejap."</p>
+        <div class="film-info">
+          <h3>Forrest Gump</h3>
+          <span class="year">1994</span>
         </div>
-      </div>
-      <div class="info">
-        <h2>Inception</h2>
-        <span class="year">2010</span>
-        <div class="rating">
+        <p class="makna">"Hidup itu seperti sekotak coklat. Kau tidak pernah tahu apa yang akan kau dapatkan."</p>
+      </article>
+
+      <article class="film-card" data-genre="sci-fi,action,thriller" data-rating="8.8">
+        <div class="poster">
+          <img src="https://picsum.photos/seed/inception2/400/600" alt="Inception" loading="lazy">
+          <span class="genre-badge">Sci-Fi</span>
+        </div>
+        <div class="rating-stars">
           <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
           <span class="rating-num">8.8</span>
         </div>
-      </div>
-    </article>
-
-    <article class="film-card" data-rating="8.7">
-      <div class="poster">
-        <img src="https://picsum.photos/seed/interstellar/400/600" alt="Interstellar Poster" loading="lazy">
-        <div class="overlay">
-          <p>"Cinta adalah satu-satunya hal yang mampu melampaui ruang dan waktu. Mungkin itu jawaban yang selama ini kita cari."</p>
+        <div class="film-info">
+          <h3>Inception</h3>
+          <span class="year">2010</span>
         </div>
-      </div>
-      <div class="info">
-        <h2>Interstellar</h2>
-        <span class="year">2014</span>
-        <div class="rating">
+        <p class="makna">"Ide bagaikan virus. Sekecil apapun, ia bisa tumbuh dan mengubah segalanya dalam sekejap."</p>
+      </article>
+
+      <article class="film-card" data-genre="sci-fi,drama" data-rating="8.7">
+        <div class="poster">
+          <img src="https://picsum.photos/seed/interstellar2/400/600" alt="Interstellar" loading="lazy">
+          <span class="genre-badge">Sci-Fi</span>
+        </div>
+        <div class="rating-stars">
           <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
           <span class="rating-num">8.7</span>
         </div>
-      </div>
-    </article>
-
-    <article class="film-card" data-rating="8.6">
-      <div class="poster">
-        <img src="https://picsum.photos/seed/spiritedaway/400/600" alt="Spirited Away Poster" loading="lazy">
-        <div class="overlay">
-          <p>"Setelah kau bertemu seseorang, kau tidak akan pernah benar-benar melupakannya. Kenangan akan selalu ada."</p>
+        <div class="film-info">
+          <h3>Interstellar</h3>
+          <span class="year">2014</span>
         </div>
-      </div>
-      <div class="info">
-        <h2>Spirited Away</h2>
-        <span class="year">2001</span>
-        <div class="rating">
+        <p class="makna">"Cinta adalah satu-satunya hal yang mampu melampaui ruang dan waktu. Mungkin itu jawaban yang selama ini kita cari."</p>
+      </article>
+
+      <article class="film-card" data-genre="animasi,drama" data-rating="8.6">
+        <div class="poster">
+          <img src="https://picsum.photos/seed/spirited2/400/600" alt="Spirited Away" loading="lazy">
+          <span class="genre-badge">Animasi</span>
+        </div>
+        <div class="rating-stars">
           <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
           <span class="rating-num">8.6</span>
         </div>
-      </div>
-    </article>
-
-    <article class="film-card" data-rating="8.5">
-      <div class="poster">
-        <img src="https://picsum.photos/seed/parasite/400/600" alt="Parasite Poster" loading="lazy">
-        <div class="overlay">
-          <p>"Kesenjangan bukan hanya tentang uang. Tapi tentang kesempatan yang tidak pernah datang untuk semua orang."</p>
+        <div class="film-info">
+          <h3>Spirited Away</h3>
+          <span class="year">2001</span>
         </div>
-      </div>
-      <div class="info">
-        <h2>Parasite</h2>
-        <span class="year">2019</span>
-        <div class="rating">
+        <p class="makna">"Setelah kau bertemu seseorang, kau tidak akan pernah benar-benar melupakannya. Kenangan akan selalu ada."</p>
+      </article>
+
+      <article class="film-card" data-genre="thriller,drama" data-rating="8.5">
+        <div class="poster">
+          <img src="https://picsum.photos/seed/parasite2/400/600" alt="Parasite" loading="lazy">
+          <span class="genre-badge">Thriller</span>
+        </div>
+        <div class="rating-stars">
           <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
           <span class="rating-num">8.5</span>
         </div>
-      </div>
-    </article>
-
-    <article class="film-card" data-rating="8.4">
-      <div class="poster">
-        <img src="https://picsum.photos/seed/joker/400/600" alt="Joker Poster" loading="lazy">
-        <div class="overlay">
-          <p>"Hal terburuk dari sakit mental adalah orang-orang mengharapkanmu bersikap normal saat kau hancur di dalam."</p>
+        <div class="film-info">
+          <h3>Parasite</h3>
+          <span class="year">2019</span>
         </div>
-      </div>
-      <div class="info">
-        <h2>Joker</h2>
-        <span class="year">2019</span>
-        <div class="rating">
+        <p class="makna">"Kesenjangan bukan hanya tentang uang. Tapi tentang kesempatan yang tidak pernah datang untuk semua orang."</p>
+      </article>
+
+      <article class="film-card" data-genre="thriller,drama" data-rating="8.4">
+        <div class="poster">
+          <img src="https://picsum.photos/seed/joker2/400/600" alt="Joker" loading="lazy">
+          <span class="genre-badge">Thriller</span>
+        </div>
+        <div class="rating-stars">
           <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
           <span class="rating-num">8.4</span>
         </div>
-      </div>
-    </article>
-
-    <article class="film-card" data-rating="8.4">
-      <div class="poster">
-        <img src="http://www.impawards.com/2018/spiderman_into_the_spiderverse" alt="Spider-Man: Into the Spider-Verse Poster" loading="lazy">
-        <div class="overlay">
-          <p>"Topeng bukan untuk menyembunyikan siapa dirimu. Tapi untuk menunjukkan siapa dirimu yang sebenarnya."</p>
+        <div class="film-info">
+          <h3>Joker</h3>
+          <span class="year">2019</span>
         </div>
-      </div>
-      <div class="info">
-        <h2>Spider-Man: Into the Spider-Verse</h2>
-        <span class="year">2018</span>
-        <div class="rating">
+        <p class="makna">"Hal terburuk dari sakit mental adalah orang-orang mengharapkanmu bersikap normal saat kau hancur di dalam."</p>
+      </article>
+
+      <article class="film-card" data-genre="animasi,action" data-rating="8.4">
+        <div class="poster">
+          <img src="https://picsum.photos/seed/spiderverse2/400/600" alt="Spider-Man: Into the Spider-Verse" loading="lazy">
+          <span class="genre-badge">Animasi</span>
+        </div>
+        <div class="rating-stars">
           <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
           <span class="rating-num">8.4</span>
         </div>
-      </div>
-    </article>
-
-    <article class="film-card" data-rating="8.4">
-      <div class="poster">
-        <img src="yourname.jpg" alt="Your Name Poster" loading="lazy">
-        <div class="overlay">
-          <p>"Takdir bukanlah sesuatu yang ditunggu. Tapi sesuatu yang diperjuangkan, meski kau harus melawan waktu."</p>
+        <div class="film-info">
+          <h3>Spider-Man: Into the Spider-Verse</h3>
+          <span class="year">2018</span>
         </div>
-      </div>
-      <div class="info">
-        <h2>Your Name</h2>
-        <span class="year">2016</span>
-        <div class="rating">
+        <p class="makna">"Topeng bukan untuk menyembunyikan siapa dirimu. Tapi untuk menunjukkan siapa dirimu yang sebenarnya."</p>
+      </article>
+
+      <article class="film-card" data-genre="animasi,romance" data-rating="8.4">
+        <div class="poster">
+          <img src="https://picsum.photos/seed/yourname2/400/600" alt="Your Name" loading="lazy">
+          <span class="genre-badge">Animasi</span>
+        </div>
+        <div class="rating-stars">
           <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
           <span class="rating-num">8.4</span>
         </div>
-      </div>
-    </article>
+        <div class="film-info">
+          <h3>Your Name</h3>
+          <span class="year">2016</span>
+        </div>
+        <p class="makna">"Takdir bukanlah sesuatu yang ditunggu. Tapi sesuatu yang diperjuangkan, meski kau harus melawan waktu."</p>
+      </article>
 
+      <article class="film-card" data-genre="romance,drama" data-rating="8.3">
+        <div class="poster">
+          <img src="https://picsum.photos/seed/lalaland2/400/600" alt="La La Land" loading="lazy">
+          <span class="genre-badge">Romance</span>
+        </div>
+        <div class="rating-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+          <span class="rating-num">8.3</span>
+        </div>
+        <div class="film-info">
+          <h3>La La Land</h3>
+          <span class="year">2016</span>
+        </div>
+        <p class="makna">"Terkadang orang datang dan pergi, tapi mimpi yang kita kejar akan selalu menjadi milik kita."</p>
+      </article>
+
+      <article class="film-card" data-genre="sci-fi,action" data-rating="8.7">
+        <div class="poster">
+          <img src="https://picsum.photos/seed/matrix2/400/600" alt="The Matrix" loading="lazy">
+          <span class="genre-badge">Sci-Fi</span>
+        </div>
+        <div class="rating-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <span class="rating-num">8.7</span>
+        </div>
+        <div class="film-info">
+          <h3>The Matrix</h3>
+          <span class="year">1999</span>
+        </div>
+        <p class="makna">"Kebenaran itu relatif. Tapi untuk bisa bebas, kau harus berani mempertanyakan kenyataan."</p>
+      </article>
+
+      <article class="film-card" data-genre="action,sci-fi" data-rating="8.4">
+        <div class="poster">
+          <img src="https://picsum.photos/seed/avengers2/400/600" alt="Avengers: Endgame" loading="lazy">
+          <span class="genre-badge">Action</span>
+        </div>
+        <div class="rating-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+          <span class="rating-num">8.4</span>
+        </div>
+        <div class="film-info">
+          <h3>Avengers: Endgame</h3>
+          <span class="year">2019</span>
+        </div>
+        <p class="makna">"Setiap jalan yang kita pilih membawa kita pada siapa kita seharusnya menjadi."</p>
+      </article>
+
+      <article class="film-card" data-genre="drama,komedi" data-rating="8.2">
+        <div class="poster">
+          <img src="https://picsum.photos/seed/greathotel/400/600" alt="The Grand Budapest Hotel" loading="lazy">
+          <span class="genre-badge">Komedi</span>
+        </div>
+        <div class="rating-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <span class="rating-num">8.2</span>
+        </div>
+        <div class="film-info">
+          <h3>The Grand Budapest Hotel</h3>
+          <span class="year">2014</span>
+        </div>
+        <p class="makna">"Ada sisi terang di setiap kegelapan. Kau hanya perlu melihat dari sudut pandang yang berbeda."</p>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="stats">
+    <div class="stats-inner">
+      <p class="stats-label">dalam angka</p>
+      <h2 class="stats-title">Koleksi yang terus tumbuh</h2>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-number">16</span>
+          <span class="stat-desc">Film Dikoleksi</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">8</span>
+          <span class="stat-desc">Genre Berbeda</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">47</span>
+          <span class="stat-desc">Tahun Perjalanan</span>
+        </div>
+      </div>
+    </div>
   </section>
 
   <footer>
-    <p>&copy; 2026 Galeri Film. Dibuat dengan <i class="fas fa-heart"></i> untuk para pecinta film.</p>
+    <p>&copy; 2026 GaleriFilm. Dibuat dengan <i class="fas fa-heart"></i> untuk para pecinta film.</p>
   </footer>
 
   <button id="scroll-top" aria-label="Scroll ke atas"><i class="fas fa-arrow-up"></i></button>
@@ -238,11 +344,12 @@
           <img id="modal-poster" src="" alt="">
         </div>
         <div id="modal-info">
+          <span id="modal-genre" class="genre-badge"></span>
           <h2 id="modal-title"></h2>
           <span id="modal-year"></span>
-          <div class="rating" id="modal-rating">
+          <div class="rating-stars" id="modal-rating">
             <span id="modal-stars"></span>
-            <span id="modal-rating-num"></span>
+            <span id="modal-rating-num" class="rating-num"></span>
           </div>
           <div id="modal-quote-wrap">
             <i class="fas fa-quote-left"></i>
