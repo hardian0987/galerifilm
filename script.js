@@ -9,65 +9,42 @@ scrollBtn.addEventListener('click', () => {
 });
 
 const cards = document.querySelectorAll('.film-card');
+const modal = document.getElementById('modal');
+const modalClose = document.getElementById('modal-close');
+
 cards.forEach(card => {
   card.addEventListener('click', () => {
+    const img = card.querySelector('.poster img');
     const title = card.querySelector('h2').textContent;
-    const quote = card.querySelector('.overlay p').textContent;
-    const rating = card.dataset.rating;
     const year = card.querySelector('.year').textContent;
+    const rating = card.dataset.rating;
+    const quote = card.querySelector('.overlay p').textContent;
+    const stars = card.querySelector('.rating').innerHTML;
 
-    const info = `${title} (${year})\nRating: ${rating}\n\n${quote}`;
-    // fallback for browsers that don't support clipboard API
-    try {
-      navigator.clipboard.writeText(info).then(() => {
-        showToast(`Makna "${title}" disalin!`);
-      });
-    } catch {
-      // silently fail
-    }
+    document.getElementById('modal-poster').src = img.src;
+    document.getElementById('modal-poster').alt = img.alt;
+    document.getElementById('modal-title').textContent = title;
+    document.getElementById('modal-year').textContent = year;
+    document.getElementById('modal-stars').innerHTML = stars;
+    document.getElementById('modal-rating-num').textContent = rating;
+    document.getElementById('modal-quote').textContent = quote;
+
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
   });
 });
 
-function showToast(msg) {
-  const existing = document.querySelector('.toast');
-  if (existing) existing.remove();
-
-  const toast = document.createElement('div');
-  toast.className = 'toast';
-  toast.textContent = msg;
-  document.body.appendChild(toast);
-
-  requestAnimationFrame(() => toast.classList.add('show'));
-
-  setTimeout(() => {
-    toast.classList.remove('show');
-    setTimeout(() => toast.remove(), 300);
-  }, 2500);
+function closeModal() {
+  modal.classList.remove('open');
+  document.body.style.overflow = '';
 }
 
-const style = document.createElement('style');
-style.textContent = `
-.toast {
-  position: fixed;
-  bottom: 90px;
-  left: 50%;
-  transform: translateX(-50%) translateY(20px);
-  background: #1a1a2e;
-  color: #f0f0f0;
-  padding: 14px 28px;
-  border-radius: 12px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  border: 1px solid rgba(245, 175, 25, 0.2);
-  opacity: 0;
-  transition: all 0.3s ease;
-  z-index: 999;
-  pointer-events: none;
-  white-space: nowrap;
-}
-.toast.show {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
-}
-`;
-document.head.appendChild(style);
+modalClose.addEventListener('click', closeModal);
+
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) closeModal();
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeModal();
+});
